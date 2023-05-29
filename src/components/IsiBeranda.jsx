@@ -7,8 +7,8 @@ import BeritaHotel from "./BeritaHotel";
 import Gambar1 from "../assets/images/image 1.png";
 import Gambar2 from "../assets/images/image 2.png";
 import Gambar3 from "../assets/images/image 3.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import ButtonUsable from "./ButtonUsable";
+
 export default function IsiBeranda() {
   const beritaHotelData = [
     {
@@ -66,14 +66,7 @@ export default function IsiBeranda() {
           ))}
         </Carousel>
       </div>
-      <div className="button-booking">
-        <button>
-          BOOKING SEKARANG
-          <div className="right-icon">
-            <FontAwesomeIcon icon={faChevronRight} />{" "}
-          </div>
-        </button>
-      </div>
+      <ButtonUsable />
     </section>
   );
 }
