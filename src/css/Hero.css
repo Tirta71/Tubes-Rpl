@@ -1,0 +1,23 @@
+.hero {
+  margin: 20rem 0;
+}
+
+.h1-hero {
+  color: white;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-size: 48px;
+  margin-bottom: 2rem;
+}
+
+.h1-hero .span1-hero {
+  font-weight: bold;
+}
+
+.span2-hero {
+  font-size: 36px;
+  color: white;
+  font-weight: lighter;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+}

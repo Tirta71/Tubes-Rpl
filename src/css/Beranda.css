@@ -1,0 +1,95 @@
+.Beranda {
+  margin-top: 5rem;
+}
+.card-beranda {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.container-beranda .diskon h1 {
+  font-size: 20px;
+}
+.container-beranda .diskon p {
+  line-height: 2rem;
+}
+.container-beranda .diskon {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 50%;
+  border-left: 2px solid black;
+  padding-left: 1rem;
+
+  margin: auto 0;
+}
+
+.banner-diskon {
+  background-color: #528af2;
+  width: 300px;
+  padding: 2rem;
+}
+.container-diskon {
+  color: white;
+  display: flex;
+}
+
+.banner-diskon h2 {
+  font-size: 36px;
+}
+.banner-diskon span {
+  font-size: 96px;
+}
+
+.baner-bawah h2 {
+  font-size: 14px;
+  color: white;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+.baner-bawah h2 span {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+.baner-bawah h3 {
+  color: white;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.gambar-diskon {
+  width: 500px;
+  height: 100%;
+}
+.gambar-diskon img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.button-booking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+.button-booking button {
+  background-color: #528af2;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  display: flex;
+  gap: 1rem;
+  box-shadow: 2px 2px 10px black;
+  transition: 0.5s;
+}
+.button-booking button:hover {
+  background-color: white;
+  color: black;
+}
+
+.right-icon {
+  color: black;
+  font-weight: bold;
+}

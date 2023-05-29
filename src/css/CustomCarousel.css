@@ -1,0 +1,40 @@
+/* CustomCarousel.css */
+.custom-indicator {
+  width: 35px;
+  height: 20px;
+  background-color: #528af2;
+  border-radius: 20px;
+  margin: 5px;
+  cursor: pointer;
+  display: inline-block;
+  transform: translate(-450px, 0);
+}
+
+.custom-indicator.selected {
+  background-color: #14274a;
+  width: 25px;
+}
+
+.custom-carousel .carousel .slider-wrapper {
+  overflow: visible !important;
+}
+.custom-carousel .carousel .control-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  white-space: nowrap; /* Add this line */
+}
+
+.custom-carousel .carousel .control-dots .dot {
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.custom-carousel .carousel .control-dots .dot.selected {
+  background-color: black;
+}

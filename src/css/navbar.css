@@ -1,0 +1,55 @@
+.container-navbar {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  align-items: center;
+}
+
+.container-navbar .logo {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.my-navbar .my-navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  transition: 1s;
+  align-items: center;
+}
+
+.navbarActive {
+  border-bottom: 3px solid white;
+  padding-bottom: 5px;
+}
+
+.my-navbar .my-navbar-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.my-navbar .my-navbar-menu li a:hover {
+  color: #d9d9d9;
+
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8); /* Efek shadow saat hover */
+}
+
+.profile {
+  display: flex;
+  gap: 1rem;
+  background-color: #d9d9d9;
+  padding: 0.4rem 1rem;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.profile .profile-img img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 100%;
+}

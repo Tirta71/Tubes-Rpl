@@ -1,0 +1,68 @@
+footer {
+  background-color: #14274a;
+  padding: 2rem 0;
+}
+
+footer p {
+  color: white;
+}
+
+.my-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.my-container .footer-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.my-container .footer-menu ul a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-sosmed ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-sosmed ul li {
+  color: white;
+  list-style: none;
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.input-email-footer button {
+  background-color: #e0b973;
+  border: none;
+  color: #14274a;
+  padding: 10px 0.8rem;
+  transition: 0.5s;
+  margin-left: 0.5px;
+}
+.input-email-footer {
+  margin-top: 0.5rem;
+}
+.input-email-footer input {
+  background-color: #14274a;
+  padding: 0.5rem 1rem;
+  border: 2px solid #e0b973;
+  color: #14274a;
+  transition: 1s;
+}
+
+.input-email-footer input:focus {
+  background-color: white;
+}
+
+.input-email-footer button:hover {
+  color: white;
+}
