@@ -32,9 +32,9 @@ export default function IsiFasilitas() {
     AOS.init({ duration: 1500 });
   }, []);
   return (
-    <div className="container my-fasilitas mt-5" data-aos="slide-up">
+    <div className="container my-fasilitas mt-5">
       <header>
-        <div className="fasilitas-header ">
+        <div className="fasilitas-header mt-5" data-aos="slide-up">
           <h1>Fasilitas</h1>
           <p>
             Nikmati fasilitas hotel kami yang luar biasa, yang dirancang untuk
@@ -44,7 +44,7 @@ export default function IsiFasilitas() {
           </p>
         </div>
       </header>
-      <div className="fasilitas-list">
+      <div className="fasilitas-list mt-5">
         {DataFasilitas.map((fasilitas, index) => (
           <div key={index} className="fasilitas-item" data-aos="fade-up">
             <img src={fasilitas.gambar} alt={`Fasilitas ${index + 1}`} />
