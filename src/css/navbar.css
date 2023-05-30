@@ -1,3 +1,6 @@
+nav {
+  overflow: auto;
+}
 .container-navbar {
   display: flex;
   justify-content: space-between;
@@ -210,11 +213,15 @@
     padding: 1rem 2rem;
   }
 
-  .my-navbar.open {
-    display: block;
-  }
   .my-navbar {
     width: 100%;
+    overflow: hidden;
+  }
+
+  .my-navbar.open {
+    animation-fill-mode: forwards;
+    display: block;
+    animation: slideDown 1s ease-out;
   }
 
   .my-navbar-menu {
@@ -241,5 +248,37 @@
   .logo {
     display: flex;
     gap: 15rem;
+  }
+
+  .menu-icon.active {
+    /* Properti transform untuk mengubah ikon menu menjadi ikon "X" */
+    transform: rotate(90deg);
+    /* Properti transition untuk memberikan efek animasi yang lebih halus */
+    transition: transform 0.3s ease;
+  }
+
+  .menu-icon.inactive {
+    transform: rotate(0deg);
+
+    transition: transform 0.3s ease;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  50% {
+    max-height: 100px;
+    opacity: 0.5;
+  }
+  75% {
+    max-height: 200px;
+    opacity: 0.7;
+  }
+  100% {
+    max-height: 300px;
+    opacity: 1;
   }
 }

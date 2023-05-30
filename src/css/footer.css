@@ -66,3 +66,9 @@ footer p {
 .input-email-footer button:hover {
   color: white;
 }
+
+@media (max-width: 768px) {
+  .my-container {
+    flex-wrap: wrap;
+  }
+}

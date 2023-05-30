@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import "../css/navbar.css";
 import { Link, useLocation } from "react-router-dom";
 import AvatarProfile from "../assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg";
-import Background from "../assets/BackroundDasar.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
@@ -11,20 +10,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Hero from "./Hero";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { menuItems } from "../data/DataNavbar";
+import { navStyle } from "../data/NavStyle";
 
 export default function Navbar() {
-  const navStyle = {
-    backgroundImage: `url(${Background})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    height: "1080px",
-  };
-
   const location = useLocation();
 
   const [isProfileOpen, setProfileOpen] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const [isMarkdownOpen, setMarkdownOpen] = useState(true); // Initial state is true
+  const [isMarkdownOpen, setMarkdownOpen] = useState(true);
   const profileRef = useRef(null);
 
   useEffect(() => {
@@ -43,7 +37,7 @@ export default function Navbar() {
 
   const handleProfileClick = () => {
     setProfileOpen(!isProfileOpen);
-    setMarkdownOpen(!isMarkdownOpen); // Toggle the markdown state
+    setMarkdownOpen(!isMarkdownOpen);
   };
 
   const handleMenuClick = () => {
@@ -56,7 +50,10 @@ export default function Navbar() {
         <div className="container container-navbar">
           <div className="logo">
             <span>LOGO</span>
-            <div className="menu-icon" onClick={handleMenuClick}>
+            <div
+              className={`menu-icon ${isMenuOpen ? "active" : "inactive"}`}
+              onClick={handleMenuClick}
+            >
               {isMenuOpen ? (
                 <FontAwesomeIcon icon={faTimes} />
               ) : (
@@ -66,34 +63,18 @@ export default function Navbar() {
           </div>
           <div className={`my-navbar ${isMenuOpen ? "open" : ""}`}>
             <ul className="my-navbar-menu">
-              <li>
-                <Link
-                  to="/"
-                  className={location.pathname === "/" ? "navbarActive" : ""}
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/fasilitas"
-                  className={
-                    location.pathname === "/fasilitas" ? "navbarActive" : ""
-                  }
-                >
-                  Fasilitas
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/pesan"
-                  className={
-                    location.pathname === "/pesan" ? "navbarActive" : ""
-                  }
-                >
-                  Pemesanan Kamar
-                </Link>
-              </li>
+              {menuItems.map((item) => (
+                <li key={item.path}>
+                  <Link
+                    to={item.path}
+                    className={
+                      location.pathname === item.path ? "navbarActive" : ""
+                    }
+                  >
+                    {item.nama}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

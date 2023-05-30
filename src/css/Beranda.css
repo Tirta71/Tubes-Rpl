@@ -66,3 +66,22 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media (max-width: 768px) {
+  .card-beranda {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 1rem;
+  }
+  .card-beranda .diskon {
+    width: 100%;
+    border-left: none;
+    border-bottom: 2px solid black;
+  }
+  .container-diskon {
+    flex-wrap: wrap;
+  }
+  .banner-diskon {
+    width: 100%;
+  }
+}

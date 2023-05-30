@@ -4,9 +4,7 @@ import "../css/CustomCarousel.css";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import BeritaHotel from "./BeritaHotel";
-import Gambar1 from "../assets/images/image 1.png";
-import Gambar2 from "../assets/images/image 2.png";
-import Gambar3 from "../assets/images/image 3.png";
+import { beritaHotelData } from "../data/DataHotel";
 import ButtonUsable from "./ButtonUsable";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -15,30 +13,6 @@ export default function IsiBeranda() {
   useEffect(() => {
     AOS.init({ duration: 1500 });
   }, []);
-
-  const beritaHotelData = [
-    {
-      showBanner: true,
-      promoTitle: "Promo Diskon",
-      promoDescription:
-        "Hotel Harmoni, di mana kenyamanan bertemu dengan keindahan, memberikan pengalaman menginap yang tak terlupakan, dan nikmati diskon booking kamar hingga 25%.",
-      gambar: Gambar1,
-    },
-    {
-      showBanner: false,
-      promoTitle: "Hotel Harmoni",
-      promoDescription:
-        "Hotel Harmoni, destinasi ideal bagi para pelancong yang mencari keindahan dan kenyamanan dalam satu paket. Dalam suasana yang mewah dan romantis, Hotel Harmoni adalah tempat ideal untuk menghidupkan kembali api cinta Anda.",
-      gambar: Gambar2,
-    },
-    {
-      showBanner: false,
-      promoTitle: "TEMPAT YANG STRATEGIS",
-      promoDescription:
-        "Terletak di lokasi yang memukau, hotel kami menawarkan pemandangan yang memukau dan akses mudah ke tempat-tempat wisata terkenal. Dengan lokasi yang strategis, hotel kami adalah tempat ideal untuk menjelajahi semua yang ditawarkan oleh kota ini.",
-      gambar: Gambar3,
-    },
-  ];
 
   const renderCustomIndicator = (onClickHandler, isSelected, index) => {
     const indicatorClassName = `custom-indicator ${
