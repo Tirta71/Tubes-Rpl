@@ -20,8 +20,18 @@
 }
 
 .navbarActive {
-  border-bottom: 3px solid white;
-  padding-bottom: 5px;
+  position: relative;
+}
+
+.navbarActive::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: white;
+  animation: underlineAnimation 0.5s ease forwards;
 }
 
 .my-navbar .my-navbar-menu li a {
@@ -112,6 +122,25 @@
 
 .menu-icon {
   display: none;
+}
+
+.markdown-profile {
+  margin-left: 0;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.markdown-profile.open {
+  opacity: 1;
+}
+
+@keyframes underlineAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @media (max-width: 768px) {

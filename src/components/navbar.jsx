@@ -24,6 +24,7 @@ export default function Navbar() {
 
   const [isProfileOpen, setProfileOpen] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isMarkdownOpen, setMarkdownOpen] = useState(true); // Initial state is true
   const profileRef = useRef(null);
 
   useEffect(() => {
@@ -42,6 +43,7 @@ export default function Navbar() {
 
   const handleProfileClick = () => {
     setProfileOpen(!isProfileOpen);
+    setMarkdownOpen(!isMarkdownOpen); // Toggle the markdown state
   };
 
   const handleMenuClick = () => {
@@ -107,7 +109,7 @@ export default function Navbar() {
               <span>Tirta Samara</span>
             </div>
 
-            <div className="markdown-profile">
+            <div className={`markdown-profile ${isMarkdownOpen ? "open" : ""}`}>
               <FontAwesomeIcon icon={faChevronDown} />
             </div>
 

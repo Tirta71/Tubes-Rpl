@@ -1,10 +1,13 @@
-import React from "react";
+import { useEffect } from "react";
 import gambar1 from "../assets/fasilitas/Bar Tepi Kolam.png";
 import gambar2 from "../assets/fasilitas/Kolam Renang.png";
 import gambar3 from "../assets/fasilitas/Restoran.png";
 import gambar4 from "../assets/fasilitas/Spa.png";
 import "../css/fasilitas.css";
 import ButtonUsable from "./ButtonUsable";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const DataFasilitas = [
   {
     gambar: gambar1,
@@ -25,8 +28,11 @@ const DataFasilitas = [
 ];
 
 export default function IsiFasilitas() {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
   return (
-    <div className="container my-fasilitas mt-5">
+    <div className="container my-fasilitas mt-5" data-aos="slide-up">
       <header>
         <div className="fasilitas-header ">
           <h1>Fasilitas</h1>
@@ -40,20 +46,19 @@ export default function IsiFasilitas() {
       </header>
       <div className="fasilitas-list">
         {DataFasilitas.map((fasilitas, index) => (
-          <div key={index} className="fasilitas-item">
+          <div key={index} className="fasilitas-item" data-aos="fade-up">
             <img src={fasilitas.gambar} alt={`Fasilitas ${index + 1}`} />
             <h2>{fasilitas.headline}</h2>
           </div>
         ))}
       </div>
-      <div className="bottom-fasilitas">
+      <div className="bottom-fasilitas" data-aos="fade-down">
         <span>
           “Jangan ragu untuk menghubungi kami dan nikmati semua fasilitas yang
           kami tawarkan di hotel kami yang luar biasa ini!"
         </span>
+        <ButtonUsable />
       </div>
-
-      <ButtonUsable />
     </div>
   );
 }

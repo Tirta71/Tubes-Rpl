@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import "../css/Beranda.css";
 import "../css/CustomCarousel.css";
 import { Carousel } from "react-responsive-carousel";
@@ -8,8 +8,14 @@ import Gambar1 from "../assets/images/image 1.png";
 import Gambar2 from "../assets/images/image 2.png";
 import Gambar3 from "../assets/images/image 3.png";
 import ButtonUsable from "./ButtonUsable";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function IsiBeranda() {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   const beritaHotelData = [
     {
       showBanner: true,
@@ -52,7 +58,7 @@ export default function IsiBeranda() {
   };
 
   return (
-    <section className="container Beranda">
+    <section className="container Beranda" data-aos="slide-up">
       <div className="container-beranda">
         <Carousel renderIndicator={renderCustomIndicator}>
           {beritaHotelData.map((data, index) => (
