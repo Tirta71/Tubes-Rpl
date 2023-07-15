@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar/navbar";
 import Footer from "../components/footer";
-import FormPesankamar from "../components/FormPesankamar";
+import PemesananKamar from "../components/Pesan Kamar/PesanKamar";
 
 export default function PesanKamar() {
   return (
     <div>
       <Navbar />
-      <FormPesankamar />
+      <PemesananKamar />
       <Footer />
     </div>
   );

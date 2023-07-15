@@ -11,3 +11,41 @@
   margin-top: 2rem;
   font-size: 20px;
 }
+
+.fasilitas-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -8rem;
+}
+.fasilitas-head {
+  font-family: "montserrat", sans-serif;
+  font-weight: 800;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: max-content;
+}
+
+.fasilitas-fill {
+  max-width: max-content;
+  background-color: #14274a;
+  color: white;
+  padding: 1rem;
+  border-radius: 20px;
+  margin-top: -20px;
+}
+.fasilitas-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.content-headline {
+  background-color: #14274a;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  margin-top: -2rem;
+}

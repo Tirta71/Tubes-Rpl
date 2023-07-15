@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import "../css/navbar.css";
+import "../../css/navbar.css";
 import { Link, useLocation } from "react-router-dom";
-import AvatarProfile from "../assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg";
+import AvatarProfile from "../../assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
@@ -10,8 +10,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Hero from "./Hero";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { menuItems } from "../data/DataNavbar";
-import { navStyle } from "../data/NavStyle";
+import { menuItems } from "../../data/DataNavbar";
+import { navStyle } from "../../data/NavStyle";
 
 export default function Navbar() {
   const location = useLocation();

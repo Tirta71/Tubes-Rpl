@@ -1,0 +1,117 @@
+.container-pesan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+  margin-top: -5rem;
+}
+.head-kategori {
+  max-width: max-content;
+  margin-bottom: -2rem;
+  z-index: 9999;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.head-kategori h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.container-kategori {
+  padding: 5rem 3rem;
+  background-color: #14274a;
+  color: white;
+  z-index: 999;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container-image {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-image .list-fasilitas {
+  text-align: start;
+  width: 90%;
+  margin-top: 2rem;
+}
+
+.container-image .image-title {
+  background-color: white;
+  max-width: max-content;
+  color: black;
+  padding: 0.5rem 5rem;
+  border-radius: 10px;
+  margin-top: -2rem;
+}
+.container-image .image-title h2 {
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+.image-kategori img {
+  width: 90%;
+}
+
+.price {
+  display: flex;
+  justify-content: end;
+}
+
+.price p {
+  background-color: white;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.pagination .ring-container {
+  display: flex;
+  align-items: center;
+}
+
+.pagination .ring {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.pagination .ring.active {
+  background-color: #528af2;
+  color: #fff;
+  width: 40px;
+}
+
+.pagination .arrow-right,
+.arrow-left {
+  font-size: 20px;
+}
+.pagination .arrow-right:hover,
+.arrow-left:hover {
+  color: black;
+}

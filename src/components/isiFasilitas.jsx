@@ -13,21 +13,28 @@ export default function IsiFasilitas() {
   return (
     <div className="container my-fasilitas mt-5">
       <header>
-        <div className="fasilitas-header mt-5" data-aos="slide-up">
-          <h1>Fasilitas</h1>
-          <p>
-            Nikmati fasilitas hotel kami yang luar biasa, yang dirancang untuk
-            memenuhi setiap kebutuhan dan kenyamanan Anda. Kenyamanan Anda
-            adalah prioritas utama kami, dan fasilitas hotel kami yang mewah
-            akan memanjakan Anda dalam setiap detail.
-          </p>
+        <div className="fasilitas-container" data-aos="slide-up">
+          <div className="fasilitas-head">
+            <h1>FASILITAS</h1>
+          </div>
+          <div className="fasilitas-fill">
+            <p>
+              Nikmati fasilitas hotel kami yang luar biasa, yang dirancang untuk
+              memenuhi setiap kebutuhan dan kenyamanan Anda. Kenyamanan Anda
+              adalah prioritas utama kami, dan fasilitas hotel kami yang mewah
+              akan memanjakan Anda dalam setiap detail.
+            </p>
+          </div>
         </div>
       </header>
       <div className="fasilitas-list mt-5">
         {DataFasilitas.map((fasilitas, index) => (
           <div key={index} className="fasilitas-item" data-aos="fade-up">
             <img src={fasilitas.gambar} alt={`Fasilitas ${index + 1}`} />
-            <h2>{fasilitas.headline}</h2>
+
+            <div className="content-headline">
+              <h2>{fasilitas.headline}</h2>
+            </div>
           </div>
         ))}
       </div>

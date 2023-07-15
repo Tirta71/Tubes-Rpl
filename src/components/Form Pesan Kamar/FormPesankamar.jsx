@@ -1,7 +1,11 @@
 import React from "react";
-import "../css/pesanKamar.css";
-import { durasiOptions, JenisKamar } from "../data/DataPesanKamar";
-import { DateImage, MoonImage, BedImage } from "../data/Data Images/DataImages";
+import "../../css/pesanKamar.css";
+import { durasiOptions, JenisKamar } from "../../data/DataPesanKamar";
+import {
+  DateImage,
+  MoonImage,
+  BedImage,
+} from "../../data/Data Images/DataImages";
 export default function FormPesankamar() {
   return (
     <div className="container my-form-container">
