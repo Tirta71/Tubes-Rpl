@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../css/Kategori.css";
 import kategoriKamarData from "../../data/Data Kamar/DataKamar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function PemesananKamar() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 1; // Jumlah item yang ditampilkan per halaman
@@ -37,9 +38,12 @@ export default function PemesananKamar() {
       }
     });
   };
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
 
   return (
-    <div className="container-pesanKamar">
+    <div className="container-pesanKamar" data-aos="slide-up">
       {currentItems.map((kategori, index) => (
         <div key={index} className="container-pesan">
           <div className="head-kategori">
