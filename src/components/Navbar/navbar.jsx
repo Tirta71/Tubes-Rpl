@@ -100,7 +100,7 @@ export default function Navbar() {
                   <div className="profile-dropdown">
                     <ul>
                       <li>
-                        <Link to="/">Profile Detail </Link>
+                        <Link to="/profile-detail">Profile Detail </Link>
                       </li>
                       <li>
                         <Link to="/detail-pesan">Detail Pesanan</Link>
