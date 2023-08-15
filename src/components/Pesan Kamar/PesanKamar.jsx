@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "../../css/Kategori.css";
 import kategoriKamarData from "../../data/Data Kamar/DataKamar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
+import PaginationPesan from "../Pagination/PaginationPesan";
 export default function PemesananKamar() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 1; // Jumlah item yang ditampilkan per halaman
   const totalPages = Math.ceil(kategoriKamarData.length / itemsPerPage);
 
-  // Menghitung indeks item yang ditampilkan pada halaman saat ini
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = kategoriKamarData.slice(
@@ -42,16 +41,24 @@ export default function PemesananKamar() {
     AOS.init({ duration: 1500 });
   }, []);
 
+  const PagePesanKamar = () => {
+    window.location.href = "/pesan-kamar";
+  };
+
   return (
     <div className="container-pesanKamar" data-aos="slide-up">
       {currentItems.map((kategori, index) => (
         <div key={index} className="container-pesan">
           <div className="head-kategori">
-            <h1>PILIH KATEGORI KAMAR</h1>
+            <h1>PILIH KAMAR</h1>
           </div>
           <div className="container-kategori">
             <div className="container-image">
-              <div className="image-kategori">
+              <div
+                className="image-kategori"
+                onClick={PagePesanKamar}
+                style={{ cursor: "pointer" }}
+              >
                 <img src={kategori.image} alt="" />
               </div>
               <div className="image-title">
@@ -66,39 +73,21 @@ export default function PemesananKamar() {
               </div>
             </div>
 
-            <div className="price">
+            <div
+              className="price"
+              onClick={PagePesanKamar}
+              style={{ cursor: "pointer" }}
+            >
               <p>{kategori.price}</p>
             </div>
 
-            <div className="pagination">
-              <div
-                className={`arrow-left ${currentPage === 1 ? "disabled" : ""}`}
-                onClick={prevPage}
-              >
-                <FontAwesomeIcon icon={faArrowLeft} />
-              </div>
-
-              <div className="ring-container">
-                {[...Array(totalPages)].map((_, pageIndex) => (
-                  <div
-                    key={pageIndex}
-                    className={`ring ${
-                      currentPage === pageIndex + 1 ? "active" : ""
-                    }`}
-                    onClick={() => setCurrentPage(pageIndex + 1)}
-                  ></div>
-                ))}
-              </div>
-
-              <div
-                className={`arrow-right ${
-                  currentPage === totalPages ? "disabled" : ""
-                }`}
-                onClick={nextPage}
-              >
-                <FontAwesomeIcon icon={faArrowRight} />
-              </div>
-            </div>
+            <PaginationPesan
+              currentPage={currentPage}
+              prevPage={prevPage}
+              totalPages={totalPages}
+              setCurrentPage={setCurrentPage}
+              nextPage={nextPage}
+            />
           </div>
         </div>
       ))}

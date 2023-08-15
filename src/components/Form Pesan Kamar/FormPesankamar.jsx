@@ -6,6 +6,7 @@ import {
   MoonImage,
   BedImage,
 } from "../../data/Data Images/DataImages";
+import ButtonUsable from "../ButtonUsable";
 export default function FormPesankamar() {
   return (
     <div className="container my-form-container">
@@ -65,6 +66,9 @@ export default function FormPesankamar() {
                 ))}
               </select>
             </label>
+          </div>
+          <div className="butonForm">
+            <ButtonUsable />
           </div>
         </div>
       </div>

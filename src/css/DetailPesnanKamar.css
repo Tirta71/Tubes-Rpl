@@ -1,0 +1,65 @@
+.containerLuarPesanan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
+  margin-top: -6rem;
+}
+
+.DetailPesanan {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: white;
+  z-index: 99;
+  font-family: "Montserrat";
+  padding: 0.5rem;
+}
+.container-detailPesan {
+  background-color: #14274a;
+  color: black;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 20px;
+  z-index: 99;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pesanCard {
+  background-color: white;
+  width: 100%;
+  border-radius: 20px;
+  height: 100%;
+  font-family: "Montserrat";
+}
+
+.pesanCard h1 {
+  font-size: 20px;
+  padding-left: 2rem;
+}
+
+.corePesan {
+  display: flex;
+  justify-content: space-between;
+}
+.arrowNext {
+  padding-right: 2rem;
+}
+
+.footerCard {
+  width: 100%;
+  background-color: #b7eac2;
+
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 0 2rem;
+}

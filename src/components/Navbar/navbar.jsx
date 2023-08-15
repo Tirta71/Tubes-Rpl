@@ -102,7 +102,9 @@ export default function Navbar() {
                       <li>
                         <Link to="/">Profile Detail </Link>
                       </li>
-
+                      <li>
+                        <Link to="/detail-pesan">Detail Pesanan</Link>
+                      </li>
                       <li>
                         <Link to="/">Logout</Link>
                       </li>

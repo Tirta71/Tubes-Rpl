@@ -3,7 +3,7 @@
 }
 
 .fasilitas-item img {
-  width: 100%;
+  width: 70%;
   margin-top: 5rem;
 }
 
@@ -48,4 +48,9 @@
   padding: 0.5rem 2rem;
   border-radius: 20px;
   margin-top: -2rem;
+}
+.content-headline h2 {
+  font-size: 20px;
+  font-family: "montserrat", sans-serif;
+  font-weight: 600;
 }

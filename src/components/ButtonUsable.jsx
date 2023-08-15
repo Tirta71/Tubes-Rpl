@@ -13,7 +13,7 @@ export default function ButtonUsable() {
     setLoading(true);
 
     setTimeout(() => {
-      navigate("/pesan");
+      navigate("/pesan-kamar");
     }, 2000);
   };
 

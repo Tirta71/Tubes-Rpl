@@ -5,6 +5,7 @@
   align-items: center;
   margin: 5rem;
   margin-top: -5rem;
+  font-family: "Montserrat", sans-serif;
 }
 .head-kategori {
   max-width: max-content;
@@ -75,6 +76,7 @@
   font-weight: 600;
   padding: 0.5rem;
   border-radius: 10px;
+  font-size: 20px;
 }
 
 .pagination {
