@@ -8,6 +8,9 @@ import DetailPesanan from "./pages/DetailPesanan";
 import FormCheckIn from "./pages/FormCheckIn";
 import ProfileDetail from "./pages/ProfileDetail";
 import TestImage from "./pages/testImage";
+import Register from "./pages/Login Register/Register";
+import Login from "./pages/Login Register/Login";
+import CobaRegister from "./pages/Login Register/CobaRegister";
 
 const App = () => {
   return (
@@ -20,6 +23,9 @@ const App = () => {
         <Route path="/pesan-kamar" element={<FormCheckIn />} />
         <Route path="/profile-detail" element={<ProfileDetail />} />
         <Route path="/test-image" element={<TestImage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/coba-register" element={<CobaRegister />} />
       </Routes>
     </Router>
   );

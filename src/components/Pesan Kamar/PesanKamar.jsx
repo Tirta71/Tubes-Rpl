@@ -9,12 +9,10 @@ export default function PemesananKamar() {
   const itemsPerPage = 1;
   const [kategoriKamarData, setKategoriKamarData] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
-  const [roomImages, setRoomImages] = useState([]);
 
   useEffect(() => {
     AOS.init({ duration: 1500 });
     fetchRoomCategories();
-    fetchRoomImages();
   }, []);
 
   const fetchRoomCategories = async () => {
@@ -27,19 +25,6 @@ export default function PemesananKamar() {
       setTotalPages(Math.ceil(data.data.length / itemsPerPage));
     } catch (error) {
       console.error("Error fetching room categories:", error);
-    }
-  };
-
-  const fetchRoomImages = async () => {
-    try {
-      const response = await fetch(
-        "https://web-hotel-rpl.my.id/api/room-image"
-      );
-      const data = await response.json();
-      setRoomImages(data.data);
-      console.log("images", data);
-    } catch (error) {
-      console.error("Error fetching room images:", error);
     }
   };
 
@@ -77,14 +62,6 @@ export default function PemesananKamar() {
   return (
     <div className="container-pesanKamar" data-aos="slide-up">
       {currentItems.map((roomCategory, index) => {
-        console.log("Room Images:", roomImages);
-        console.log("Room ID:", roomCategory.room[0].id);
-
-        const matchingImage = roomImages.find(
-          (image) => parseInt(image.room_id) === roomCategory.room[0].id
-        );
-        console.log("Matching Image:", matchingImage);
-
         return (
           <div key={index} className="container-pesan">
             <div className="head-kategori">
@@ -97,12 +74,10 @@ export default function PemesananKamar() {
                   onClick={PagePesanKamar}
                   style={{ cursor: "pointer" }}
                 >
-                  {matchingImage && (
-                    <img
-                      src={`https://web-hotel-rpl.my.id/storage/room/image/${matchingImage.url_image}`}
-                      alt=""
-                    />
-                  )}
+                  <img
+                    src={`https://web-hotel-rpl.my.id/storage/room/image/${roomCategory.url_image}`}
+                    alt=""
+                  />
                 </div>
                 <div className="image-title">
                   <h2>{roomCategory.name}</h2>
