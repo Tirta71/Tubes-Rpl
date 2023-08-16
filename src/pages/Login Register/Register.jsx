@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Register() {
   const [data, setData] = useState({
@@ -13,32 +14,41 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const apiUrl = "https://web-hotel-rpl.my.id/api/register";
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, register!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        try {
+          const apiUrl = "https://web-hotel-rpl.my.id/api/register";
+          const response = await axios.post(apiUrl, data);
 
-    try {
-      const csrfToken = document
-        .querySelector('meta[name="csrf-token"]')
-        .getAttribute("content");
+          console.log("Registration response:", response.data);
+          setData({
+            name: "",
+            phone_number: "",
+            email: "",
+            password: "",
+          });
 
-      const response = await axios.post(apiUrl, data, {
-        headers: {
-          "Content-Type": "application/json",
-          "X-CSRF-TOKEN": csrfToken,
-        },
-      });
-
-      console.log("Registration response:", response.data);
-      setData((prevData) => ({
-        ...prevData,
-        apiResponse: response.data.data,
-      }));
-    } catch (error) {
-      console.error("Error registering:", error);
-      setData((prevData) => ({
-        ...prevData,
-        apiResponse: null,
-      }));
-    }
+          Swal.fire(
+            "Registered!",
+            "Your registration has been successful.",
+            "success"
+          ).then(() => {
+            window.location.href = "/login";
+          });
+        } catch (error) {
+          console.error("Error registering:", error);
+          Swal.fire("Error", "An error occurred while registering.", "error");
+        }
+      }
+    });
   };
 
   return (
@@ -94,18 +104,14 @@ export default function Register() {
             <button type="submit">
               <span>Register</span>
             </button>
-            <div style={{ textAlign: "center" }}>Have an account?</div>
-          </form>
-          {/* Display API response if available */}
-          {data.apiResponse && (
-            <div className="api-response">
-              <h3>API Response:</h3>
-              <p>Name: {data.apiResponse.name}</p>
-              <p>Phone Number: {data.apiResponse.phone_number}</p>
-              <p>Email: {data.apiResponse.email}</p>
-              <p>ID: {data.apiResponse.id}</p>
+            <div
+              style={{ textAlign: "center", cursor: "pointer" }}
+              onClick={() => (window.location.href = "/login")}
+            >
+              Already have an account?
             </div>
-          )}
+          </form>
+
           <img src="images/image-2.png" alt="" className="image-2" />
         </div>
       </div>

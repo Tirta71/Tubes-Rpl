@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -16,11 +17,17 @@ export default function Login() {
       .post(apiUrl, formData)
       .then((response) => {
         console.log("Login response:", response.data);
-        // Handle success or redirect to dashboard
+        Swal.fire({
+          icon: "success",
+          title: "Success login",
+          text: "You will redirect to home page",
+        }).then(() => {
+          window.location.href = "/";
+        });
       })
       .catch((error) => {
         console.error("Error logging in:", error);
-        // Handle error or display an error message
+        Swal.fire("Oopss", "Password or email wrong", "error");
       });
   };
 
@@ -60,6 +67,12 @@ export default function Login() {
             <button type="submit">
               <span>Login</span>
             </button>
+            <div
+              style={{ textAlign: "center", cursor: "pointer" }}
+              onClick={() => (window.location.href = "/register")}
+            >
+              dont't have account?
+            </div>
           </form>
           <img src="images/image-2.png" alt="" className="image-2" />
         </div>

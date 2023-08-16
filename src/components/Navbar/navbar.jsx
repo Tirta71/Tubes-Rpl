@@ -106,7 +106,7 @@ export default function Navbar() {
                         <Link to="/detail-pesan">Detail Pesanan</Link>
                       </li>
                       <li>
-                        <Link to="/">Logout</Link>
+                        <Link to="/login">Logout</Link>
                       </li>
                     </ul>
                   </div>
