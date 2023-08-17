@@ -62,9 +62,10 @@ export default function FormDetailPesan() {
             <div
               className="footerCard"
               style={{
-                backgroundColor: pesanCard.status
-                  ? "#b7eac2"
-                  : "rgb(251, 80, 80)",
+                backgroundColor:
+                  pesanCard.status === "Confirmation Room"
+                    ? "rgb(251, 80, 80)"
+                    : "#b7eac2 ",
               }}
             >
               <p>{pesanCard.date}</p>
