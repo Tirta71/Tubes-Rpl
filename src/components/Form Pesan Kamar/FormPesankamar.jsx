@@ -207,7 +207,7 @@ export default function FormPesankamar() {
       const response = await axios.post(apiUrl, requestData, { headers });
       console.log("Response:", response.data);
       Swal.fire("SUCCESS", "Invoice Berhasil Di buat", "success").then(() => {
-        window.location.href = "/";
+        window.location.href = "/detail-pesan";
       });
     } catch (error) {
       console.error("Error:", error);

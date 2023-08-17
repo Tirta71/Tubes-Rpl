@@ -79,14 +79,25 @@ export default function FormDetailPesan() {
         <div className="modal">
           <div className="modal-content">
             <h1>Detail Pesanan {selectedOrder.invoice_number}</h1>
+
             <p>Nama: {selectedOrder.customer.name}</p>
             <p>No Hp: {selectedOrder.customer.phone_number} </p>
             <p>Check-In: {selectedOrder.check_in}</p>
             <p>Check-Out: {selectedOrder.check_out}</p>
+            <p>Durasi Mengingap: {selectedOrder.order_detail.duration_stay} </p>
             <p>Pembayaran : {selectedOrder.payment_type}</p>
-            <p>Total Harga: {selectedOrder.total_price}</p>
+            <p>Total Harga: {selectedOrder.total_price.toLocaleString()}</p>
+            <h3>Room INFO</h3>
+            {selectedOrder.room &&
+              selectedOrder.order_detail.room.room_number && (
+                <p>
+                  room_number: {selectedOrder.order_detail.room.room_number}
+                </p>
+              )}
 
-            <button onClick={closeModal}>Close</button>
+            <span className="button_close_modal" onClick={closeModal}>
+              Close
+            </span>
           </div>
         </div>
       )}
