@@ -33,6 +33,7 @@ export default function FormPesankamar() {
         price: parseFloat(category.price),
       }));
 
+      console.log(response.data.data);
       console.log("Fetched jenisKamarOptions:", jenisKamarOptions);
 
       setJenisKamarOptions(jenisKamarOptions);
@@ -190,10 +191,11 @@ export default function FormPesankamar() {
     const hargaKamar = selectedJenisKamar.price;
     const durasi = calculateDuration(formData.checkin, formData.checkout); // Menghitung durasi
     const total_price = hargaKamar * durasi;
-
+    const Jenis_Kamar = selectedJenisKamar.label;
     const requestData = {
       total_price,
       check_in: formData.checkin,
+      jenisKamar: Jenis_Kamar,
       check_out: formData.checkout,
       duration_stay: durasi, // Menggunakan durasi yang telah dihitung
     };

@@ -36,13 +36,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="footer-form">
-          <label htmlFor="email">Subscribe to our newsletter</label>
-          <div className="input-email-footer">
-            <input type="email" id="email" placeholder="Type your email" />
-            <button>OK</button>
-          </div>
-        </div>
+        <div className="footer-form"></div>
       </div>
     </footer>
   );

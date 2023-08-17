@@ -92,7 +92,20 @@ export default function FormDetailPesan() {
               selectedOrder.order_detail.room.room_number && (
                 <>
                   <p>
-                    room_number: {selectedOrder.order_detail.room.room_number}
+                    Kategori Kamar :{" "}
+                    {selectedOrder.order_detail.room_category.name}
+                  </p>
+                  <p>
+                    room number: {selectedOrder.order_detail.room.room_number}
+                  </p>
+                  <p>
+                    Harga Kamar : RP.
+                    {parseInt(
+                      selectedOrder.order_detail.room_category.price
+                    ).toLocaleString()}
+                  </p>
+                  <p style={{ color: "red" }}>
+                    Note : Harap Cetak invoice saat datang ke hotel
                   </p>
                 </>
               )}
