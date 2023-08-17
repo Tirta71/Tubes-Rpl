@@ -1,33 +1,41 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "../../css/DetailPesnanKamar.css";
 
 export default function FormDetailPesan() {
   const [pesanCards, setPesanCards] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState(null);
 
   useEffect(() => {
-    const fetchedData = [
-      {
-        id: 1,
-        pesanan: "#PESANAN1",
-        nama: "Tirta Samara",
-        telepon: "123123123",
-        status: true,
-        waktu: "20:49",
-        tanggal: "30 Desember 2023",
-      },
-      {
-        id: 2,
-        pesanan: "#PESANAN2",
-        nama: "John Doe",
-        telepon: "456456456",
-        status: false,
-        waktu: "22:15",
-        tanggal: "31 Desember 2023",
-      },
-    ];
+    const token = localStorage.getItem("token"); // Ganti dengan token yang sesuai
+    const apiUrl = "https://web-hotel-rpl.my.id/api/customer-order";
 
-    setPesanCards(fetchedData);
+    const headers = {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    };
+
+    axios
+      .get(apiUrl, { headers })
+      .then((response) => {
+        setPesanCards(response.data.data);
+        console.log(response.data.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   }, []);
+
+  const openModal = (order) => {
+    setSelectedOrder(order);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedOrder(null);
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="containerLuarPesanan">
@@ -37,14 +45,17 @@ export default function FormDetailPesan() {
       <div className="container-detailPesan">
         {pesanCards.map((pesanCard) => (
           <div className="pesanCard" key={pesanCard.id}>
-            <h1>{pesanCard.pesanan}</h1>
+            <h1>{pesanCard.invoice_number}</h1>
             <div className="corePesan">
-              <h1>
-                {pesanCard.nama} <br />
-                {pesanCard.telepon}
-              </h1>
+              <div className="content-invoice">
+                <h1>
+                  Nama : {pesanCard.customer.name}
+                  <br />
+                  Pembayaran : {pesanCard.payment_type}
+                </h1>
+              </div>
               <div className="arrowNext">
-                <p>Next</p>
+                <p onClick={() => openModal(pesanCard)}>Next</p>
               </div>
             </div>
 
@@ -56,13 +67,29 @@ export default function FormDetailPesan() {
                   : "rgb(251, 80, 80)",
               }}
             >
-              <p>{pesanCard.waktu}</p>
+              <p>{pesanCard.date}</p>
               <p>{pesanCard.tanggal}</p>
-              {pesanCard.status ? "Sukses" : "Pending"}{" "}
+              {pesanCard.status}
             </div>
           </div>
         ))}
       </div>
+
+      {isModalOpen && selectedOrder && (
+        <div className="modal">
+          <div className="modal-content">
+            <h1>Detail Pesanan {selectedOrder.invoice_number}</h1>
+            <p>Nama: {selectedOrder.customer.name}</p>
+            <p>No Hp: {selectedOrder.customer.phone_number} </p>
+            <p>Check-In: {selectedOrder.check_in}</p>
+            <p>Check-Out: {selectedOrder.check_out}</p>
+            <p>Pembayaran : {selectedOrder.payment_type}</p>
+            <p>Total Harga: {selectedOrder.total_price}</p>
+
+            <button onClick={closeModal}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

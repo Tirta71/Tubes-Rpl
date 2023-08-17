@@ -130,7 +130,7 @@ export default function Navbar() {
             <div
               className="Register-dulu"
               onClick={() => {
-                window.location.href = "/";
+                window.location.href = "/register";
               }}
             >
               <span>Register</span>

@@ -50,12 +50,60 @@
   flex-wrap: wrap;
 }
 
+.Detail-harga {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.form-footer {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-footer div {
+  flex: 1;
+  text-align: center;
+}
+
+.form-footer span {
+  font-size: 16px;
+  color: white;
+}
+
+.btn-kirim {
+  padding: 1rem 2rem;
+  background-color: white;
+  color: #14274a;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 2px 2px 2px black;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn-kirim:hover {
+  background-color: #14274a;
+  color: white;
+  transition: 0.1s all;
+}
 .container-form input,
 .container-form select {
   width: 230px;
   height: 50px;
   text-align: center;
   border-radius: 20px;
+  margin-bottom: 2rem;
 }
 
 .butonForm {
@@ -63,6 +111,7 @@
   right: 4rem;
   bottom: -5rem;
 }
+
 @media (max-width: 768px) {
   .top {
     display: none;
