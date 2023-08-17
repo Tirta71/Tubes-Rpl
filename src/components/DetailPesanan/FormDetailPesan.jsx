@@ -88,11 +88,13 @@ export default function FormDetailPesan() {
             <p>Pembayaran : {selectedOrder.payment_type}</p>
             <p>Total Harga: {selectedOrder.total_price.toLocaleString()}</p>
             <h3>Room INFO</h3>
-            {selectedOrder.room &&
+            {selectedOrder.order_detail.room &&
               selectedOrder.order_detail.room.room_number && (
-                <p>
-                  room_number: {selectedOrder.order_detail.room.room_number}
-                </p>
+                <>
+                  <p>
+                    room_number: {selectedOrder.order_detail.room.room_number}
+                  </p>
+                </>
               )}
 
             <span className="button_close_modal" onClick={closeModal}>

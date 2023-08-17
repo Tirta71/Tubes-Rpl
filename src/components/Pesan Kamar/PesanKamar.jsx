@@ -89,10 +89,7 @@ export default function PemesananKamar() {
                 <div className="list-fasilitas">
                   <ul>
                     {roomCategory.facility.map((item, index) => (
-                      <li key={index}>
-                        {item.name} <br />
-                        {item.description}
-                      </li>
+                      <li key={index}>{item.name}</li>
                     ))}
                   </ul>
                 </div>
