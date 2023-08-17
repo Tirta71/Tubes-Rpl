@@ -16,18 +16,34 @@ export default function Login() {
     axios
       .post(apiUrl, formData)
       .then((response) => {
-        console.log("Login response:", response.data);
-        Swal.fire({
-          icon: "success",
-          title: "Success login",
-          text: "You will redirect to home page",
-        }).then(() => {
-          window.location.href = "/";
-        });
+        console.log("Respon login:", response.data.data);
+
+        if (response.data.data.access_token && response.data.data.user) {
+          const username = response.data.data.user.name;
+          const phone_number = response.data.data.user.phone_number;
+          const email = response.data.data.user.email;
+          const token = response.data.data.access_token;
+
+          localStorage.setItem("token", token);
+          localStorage.setItem("email", email);
+          localStorage.setItem("phone", phone_number);
+          localStorage.setItem("username", username);
+          localStorage.setItem("isLogged", true);
+
+          Swal.fire({
+            icon: "success",
+            title: "Berhasil login",
+            text: "Anda akan diarahkan ke halaman utama",
+          }).then(() => {
+            window.location.href = "/";
+          });
+        } else {
+          Swal.fire("Oopss", "Password atau email salah", "error");
+        }
       })
       .catch((error) => {
-        console.error("Error logging in:", error);
-        Swal.fire("Oopss", "Password or email wrong", "error");
+        console.error("Kesalahan saat login:", error);
+        Swal.fire("Oopss", "Terjadi kesalahan", "error");
       });
   };
 

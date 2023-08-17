@@ -9,7 +9,7 @@ export default function PemesananKamar() {
   const itemsPerPage = 1;
   const [kategoriKamarData, setKategoriKamarData] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
-
+  const isLoggedIn = localStorage.getItem("isLogged");
   useEffect(() => {
     AOS.init({ duration: 1500 });
     fetchRoomCategories();
@@ -49,7 +49,11 @@ export default function PemesananKamar() {
   };
 
   const PagePesanKamar = () => {
-    window.location.href = "/pesan-kamar";
+    if (isLoggedIn) {
+      window.location.href = "/pesan-kamar";
+    } else {
+      window.location.href = "/register";
+    }
   };
 
   const indexOfLastItem = currentPage * itemsPerPage;

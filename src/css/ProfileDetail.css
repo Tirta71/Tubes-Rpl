@@ -6,8 +6,7 @@ body {
   overflow: hidden;
 }
 .container-fluid {
-  margin: 2rem;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .card {
@@ -17,8 +16,13 @@ body {
   border: none;
   margin-bottom: 30px;
   height: 100%;
+  width: 80%;
 }
-
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .m-r-0 {
   margin-right: 0px;
 }

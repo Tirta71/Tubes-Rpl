@@ -58,6 +58,8 @@
   transition: 1s;
   position: relative;
   cursor: pointer;
+  width: 250px;
+  justify-content: center;
 }
 
 .profile .profile-img img {
@@ -132,6 +134,21 @@
 
 .markdown-profile.open {
   opacity: 1;
+}
+.Register-dulu {
+  background-color: #14274a;
+  color: white;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px black;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Register-dulu:hover {
+  background-color: white;
+  color: #14274a;
 }
 
 @keyframes underlineAnimation {
