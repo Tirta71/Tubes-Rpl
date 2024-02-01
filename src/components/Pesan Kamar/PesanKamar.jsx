@@ -79,6 +79,11 @@ export default function PemesananKamar() {
                   style={{ cursor: "pointer" }}
                 >
                   <img
+                    style={{
+                      height: "300px",
+                      width: "500px",
+                      objectFit: "cover",
+                    }}
                     src={`https://web-hotel-rpl.my.id/storage/room/image/${roomCategory.url_image}`}
                     alt=""
                   />

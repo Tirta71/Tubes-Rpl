@@ -173,7 +173,7 @@ export default function FormPesankamar() {
     }
 
     const apiUrl = "https://web-hotel-rpl.my.id/api/check-out";
-    const token = localStorage.getItem("token"); // Ganti dengan token yang sesuai
+    const token = localStorage.getItem("token");
 
     const selectedJenisKamar = jenisKamarOptions.find(
       (option) => formData.jenisKamar === option.label
